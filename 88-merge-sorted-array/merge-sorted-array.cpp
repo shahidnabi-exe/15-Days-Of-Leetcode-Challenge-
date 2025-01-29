@@ -1,22 +1,22 @@
 class Solution {
 public:
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-         int i = m - 1;  // Pointer for the end of nums1's valid elements
-    int j = n - 1;  // Pointer for the end of nums2
-    int k = m + n - 1;  // Pointer for the end of nums1 (merged array)
+    void merge(vector<int>& arr1, int m, vector<int>& arr2, int n) {
+         int i = m - 1;  // Pointer for the end of arr1's valid elements
+        int j = n - 1;  // Pointer for the end of arr2
+        int k = m + n - 1;  // Pointer for the end of arr1 (merged array)
 
-    // Merge nums1 and nums2 from the end
-    while (i >= 0 && j >= 0) {
-        if (nums1[i] > nums2[j]) {
-            nums1[k--] = nums1[i--];  // Place nums1[i] at the end
-        } else {
-            nums1[k--] = nums2[j--];  // Place nums2[j] at the end
+        // Merge arr1 and arr2 from the end
+        while (i >= 0 && j >= 0) {
+            if (arr1[i] > arr2[j]) {
+                arr1[k--] = arr1[i--];  // Place arr1[i] at the end
+            } else {
+                arr1[k--] = arr2[j--];  // Place arr2[j] at the end
+            }
         }
-    }
 
-    // If there are remaining elements in nums2, copy them to nums1
-    while (j >= 0) {
-        nums1[k--] = nums2[j--];
-    }
+        // If there are remaining elements in arr2, copy them to arr1
+        while (j >= 0) {
+            arr1[k--] = arr2[j--];
+        }
     }
 };
